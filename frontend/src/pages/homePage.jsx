@@ -6,11 +6,11 @@ import Footer from "../components/footer";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen ">
       <main className="flex-grow relative z-40">
         <Navbar />
         <Banner />
-        <Testimonials />
+        {/* <Testimonials /> */}
       </main>
       <Footer />
     </div>

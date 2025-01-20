@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-transparent text-white py-4 z-50">
+    <nav className="fixed top-0 left-0 w-full bg-[#f2f4e1] text-black py-4 z-50">
       <div className="container mx-auto flex justify-between items-center px-4">
         {/* Logo */}
         <div className="text-2xl font-bold">
@@ -11,32 +11,42 @@ const Navbar = () => {
         </div>
 
         {/* Links */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex space-x-6 ">
           <li>
-            <Link to="/" className="hover:underline">
+            <Link to="/" className="hover:underline hover:text-gray-500">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/features" className="hover:underline">
+            <Link
+              to="/features"
+              className="hover:underline hover:text-gray-500"
+            >
               Features
             </Link>
           </li>
           <li>
-            <Link to="/about" className="hover:underline">
+            <Link to="/about" className="hover:underline hover:text-gray-500">
               About
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="hover:underline">
+            <Link to="/contact" className="hover:underline hover:text-gray-500">
               Contact
+            </Link>
+          </li>
+          <li>
+            <Link to="/login">
+              <button className="px-3 rounded text-white bg-[#fd360d] hover:bg-[#b92b0d] transition duration-300">
+                Login
+              </button>
             </Link>
           </li>
         </ul>
 
         {/* Mobile Hamburger Menu */}
         <div className="md:hidden">
-          <button className="text-white hover:text-gray-300 focus:outline-none">
+          <button className="text-black hover:text-black-300 focus:outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
