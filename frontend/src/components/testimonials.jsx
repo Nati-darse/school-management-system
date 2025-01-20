@@ -1,137 +1,93 @@
-// import React, { useState } from "react";
-
-// const Testimonials = () => {
-//   const testimonials = [
-//     {
-//       name: "John Doe",
-//       text: "This platform has made managing our school so much easier!",
-//     },
-//     {
-//       name: "Jane Smith",
-//       text: "I love how intuitive and user-friendly the system is!",
-//     },
-//     {
-//       name: "Sarah Lee",
-//       text: "A fantastic tool for both students and teachers alike.",
-//     },
-//   ];
-
-//   const totalTestimonials = testimonials.length;
-//   const [index, setIndex] = useState(0);
-
-//   const goToNextTestimonial = () => {
-//     setIndex((prevIndex) => (prevIndex + 1) % totalTestimonials);
-//   };
-
-//   const goToPreviousTestimonial = () => {
-//     setIndex(
-//       (prevIndex) => (prevIndex - 1 + totalTestimonials) % totalTestimonials
-//     );
-//   };
-
-//   return (
-//     <div className=" flex flex-col bg-white h-[500px] items-center justify-center">
-//       <h3>{testimonials[index].name}</h3>
-//       <p>"{testimonials[index].text}"</p>
-
-//       <div>
-//         <button onClick={goToPreviousTestimonial} disabled={index === 0}>
-//           Back
-//         </button>
-//         <button
-//           onClick={goToNextTestimonial}
-//           disabled={index === totalTestimonials - 1}
-//         >
-//           Next
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Testimonials;
-
-import React, { useState, useEffect } from "react";
+import React from "react";
+import image1 from "../assets/1.png";
+import image2 from "../assets/2.png";
+import image3 from "../assets/3.png";
+import image5 from "../assets/5.png";
 
 const Testimonials = () => {
-  const testimonials = [
+  const students = [
     {
-      name: "John Doe",
-      text: "This platform has made managing our school so much easier!",
+      id: 1,
+      image: image1,
+      alt: "Student 1",
+      style: "top-10 left-170",
+      textt: " Alexander Morgan",
+      texttStyle: "top-40 left-40",
+      text: "📌  A perfect blend of academic excellence and character building, creating future-ready and responsible individuals.",
+      textStyle: "top-40 left-40",
     },
     {
-      name: "Jane Smith",
-      text: "I love how intuitive and user-friendly the system is!",
+      id: 2,
+      image: image2,
+      alt: "Student 2",
+      style: "top-10 right-10",
+      textt: " Ethan James",
+      texttStyle: "top-50 right-20",
+      text: "📌  This school fosters a nurturing environment, empowering its students to excel academically and grow personally.",
+      textStyle: "top-50 right-20",
     },
     {
-      name: "Sarah Lee",
-      text: "A fantastic tool for both students and teachers alike.",
+      id: 3,
+      image: image3,
+      alt: "Student 3",
+      style: "bottom-10 left-70",
+      textt: " Sophia Isabelle ",
+      texttStyle: "bottom-80 left-40",
+      text: "📌 The teachers are dedicated, the facilities are top-notch, and the learning experience is unparalleled.",
+      textStyle: "bottom-80 left-40",
+    },
+    {
+      id: 5,
+      image: image5,
+      alt: "Student 5",
+      style: "bottom-10 right-10",
+      textt: " James Rodrigo",
+      texttStyle: "bottom-80 right-[200px]",
+      text: "📌  Encouraging creativity, collaboration, and critical thinking, this school truly brings out the best in students.",
+      textStyle: "bottom-80 right-[200px]",
     },
   ];
-
-  const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState("next");
-
-  const totalTestimonials = testimonials.length;
-
-  const goToNextTestimonial = () => {
-    setDirection("next");
-    setIndex((prevIndex) => (prevIndex + 1) % totalTestimonials);
-  };
-
-  const goToPreviousTestimonial = () => {
-    setDirection("prev");
-    setIndex(
-      (prevIndex) => (prevIndex - 1 + totalTestimonials) % totalTestimonials
-    );
-  };
-
-  // Automatic sliding every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      goToNextTestimonial();
-    }, 5000);
-
-    return () => clearInterval(interval); // Cleanup interval on unmount
-  }, [index]);
-
   return (
-    <div className="flex flex-col bg-gray-100 h-[500px] items-center justify-center relative overflow-hidden">
-      <h2 className="text-4xl font-bold mb-10">Testimonials</h2>
-      <div className="w-full max-w-lg relative">
-        <div
-          className={`transition-transform duration-700 ease-in-out flex`}
-          style={{
-            transform: `translateX(-${index * 100}%)`,
-          }}
-        >
-          {testimonials.map((testimonial, i) => (
-            <div
-              key={i}
-              className="min-w-full px-6 py-4 bg-white mx-20 rounded shadow-md text-center"
-            >
-              <p className="text-lg italic mb-2">"{testimonial.text}"</p>
-              <p className="text-red-400 font-bold">- {testimonial.name}</p>
-            </div>
-          ))}
-        </div>
+    <div className="min-h-screen relative bg-white py-16 px-4 sm:px-6 lg:px-8">
+      {/* Center Content */}
+      <div className="text-center relative z-10">
+        <h2 className="pt-40 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          1.5K+ Students are learning from us 🎉
+        </h2>
+        <p className="mt-4 text-lg text-gray-600">
+          TO THOSE WHO NEEDS TO LEARN AND CHANGE THE WORLD
+        </p>
+        <button className="mt-6 bg-[#fd360d]  text-white px-6 py-3 rounded-lg font-bold hover:bg-[#b92b0d] transition duration-200">
+          Subscribe Now
+        </button>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="absolute bottom-8 flex space-x-4">
-        <button
-          onClick={goToPreviousTestimonial}
-          className="p-2 bg-red-300 text-white rounded-full hover:bg-red-500 transition"
+      {/* Positioned Images */}
+      {students.map((student) => (
+        <div
+          key={student.id}
+          className={`absolute ${student.style} flex flex-col items-center p-2 border border-gray-200 rounded-3xl shadow-sm bg-white`}
         >
-          &#8592;
-        </button>
-        <button
-          onClick={goToNextTestimonial}
-          className="p-2 bg-red-300 text-white rounded-full hover:bg-red-500 transition"
-        >
-          &#8594;
-        </button>
-      </div>
+          <div className="w-24 h-24 rounded-full shadow-md">
+            <img
+              src={student.image}
+              alt={student.alt}
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
+          <p className="mt-4 text-bold text-gray-600 w-[250px] break-words text-center">
+            {student.textt}
+          </p>
+          <p className="mt-4 text-sm text-gray-600 w-[250px] break-words text-center">
+            {student.text}
+          </p>
+        </div>
+      ))}
+
+      {/* Decorative Circles */}
+      <div className="absolute top-16 left-[40%] w-10 h-10 border-4 border-yellow-500 rounded-full"></div>
+      <div className="absolute bottom-16 right-[25%] w-12 h-12 border-4 border-green-500 rounded-full"></div>
+      <div className="absolute bottom-40 right-[60%] w-11 h-11 border-4 border-red-500 rounded-full"></div>
     </div>
   );
 };
