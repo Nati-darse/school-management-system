@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import warkaLogo from '../../assets/warka_logo.jpeg';
+import warkaLogo from "../../assets/warka_logo.jpeg";
 
 const RegistrationPage = () => {
   const [isNewStudent, setIsNewStudent] = useState(null); // State for new or returning student
@@ -12,7 +12,9 @@ const RegistrationPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-[#f2f4ef] text-black px-20"> {/* Increased horizontal padding */}
+    <div className="min-h-screen flex flex-col justify-center items-center bg-[#f2f4ef] text-black px-20">
+      {" "}
+      {/* Increased horizontal padding */}
       {/* Header Section */}
       <div className="flex items-center mb-8">
         <img
@@ -22,13 +24,15 @@ const RegistrationPage = () => {
         />
         <h1 className="text-4xl font-bold ml-4">Warka Academy</h1>
       </div>
-
       {/* Registration Box */}
-      <div className="bg-white shadow-md rounded-lg p-10 w-11/12 md:w-3/4 lg:w-1/2"> 
+      <div className="bg-[#f2f4ef] shadow-2xl rounded-lg mb-40 p-10 w-11/12 md:w-3/4 lg:w-1/2">
         <form className="space-y-6" onSubmit={handleNext}>
           <p className="text-3xl ">Registration Form </p>
           <div>
-            <label htmlFor="firstName" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="firstName"
+              className="block text-sm font-medium mb-2"
+            >
               First Name *
             </label>
             <input
@@ -42,7 +46,10 @@ const RegistrationPage = () => {
 
           {/* Middle Name Field */}
           <div>
-            <label htmlFor="middleName" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="middleName"
+              className="block text-sm font-medium mb-2"
+            >
               Middle Name *
             </label>
             <input
@@ -56,7 +63,10 @@ const RegistrationPage = () => {
 
           {/* Last Name Field */}
           <div>
-            <label htmlFor="lastName" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="lastName"
+              className="block text-sm font-medium mb-2"
+            >
               Last Name *
             </label>
             <input
@@ -81,7 +91,6 @@ const RegistrationPage = () => {
               <option value="">Select Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
-        
             </select>
           </div>
 
@@ -114,13 +123,15 @@ const RegistrationPage = () => {
 
           {/* New or Returning Student Radio Buttons */}
           <div>
-            <span className="block text-sm font-medium mb-2">Are you a new or returning student? *</span>
+            <span className="block text-sm font-medium mb-2">
+              Are you a new or returning student? *
+            </span>
             <label className="inline-flex items-center mr-4">
               <input
                 type="radio"
                 value="new"
-                checked={isNewStudent === 'new'}
-                onChange={() => setIsNewStudent('new')}
+                checked={isNewStudent === "new"}
+                onChange={() => setIsNewStudent("new")}
                 required
                 className="mr-2"
               />
@@ -130,8 +141,8 @@ const RegistrationPage = () => {
               <input
                 type="radio"
                 value="returning"
-                checked={isNewStudent === 'returning'}
-                onChange={() => setIsNewStudent('returning')}
+                checked={isNewStudent === "returning"}
+                onChange={() => setIsNewStudent("returning")}
                 required
                 className="mr-2"
               />
@@ -167,7 +178,10 @@ const RegistrationPage = () => {
 
           {/* Student Photo Upload */}
           <div>
-            <label htmlFor="studentPhoto" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="studentPhoto"
+              className="block text-sm font-medium mb-2"
+            >
               Student Photo *
             </label>
             <input
@@ -180,7 +194,10 @@ const RegistrationPage = () => {
 
           {/* Birth Certificate Upload */}
           <div>
-            <label htmlFor="birthCertificate" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="birthCertificate"
+              className="block text-sm font-medium mb-2"
+            >
               Birth Certificate *
             </label>
             <input
@@ -193,7 +210,10 @@ const RegistrationPage = () => {
 
           {/* Last Class Certificate Upload */}
           <div>
-            <label htmlFor="lastClassCertificate" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="lastClassCertificate"
+              className="block text-sm font-medium mb-2"
+            >
               Last Class Certificate *
             </label>
             <input
@@ -205,14 +225,16 @@ const RegistrationPage = () => {
           </div>
 
           {/* Submit Button */}
-          <div>
-            <button
-              type="submit"
-              className="w-full bg-[#fd360d] text-white font-bold py-3 rounded-md hover:bg-[#b92b0d] transition duration-200"
-            >
-              Next
-            </button>
-          </div>
+          <Link to="/livingStatus">
+            <div>
+              <button
+                type="submit"
+                className="w-full bg-[#fd360d] text-white font-bold py-3 rounded-md hover:bg-[#b92b0d] transition duration-200"
+              >
+                Next
+              </button>
+            </div>
+          </Link>
         </form>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({isStudentPage, isHomePage}) => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-[#f2f4e1] text-black py-4 z-50">
       <div className="container mx-auto flex justify-between items-center px-4">
@@ -18,12 +18,17 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
+            {isStudentPage && <Link to="/dashboard">Dashboard</Link>}
+          </li>
+          <li>
+            { isHomePage &&
             <Link
               to="/features"
               className="hover:underline hover:text-gray-500"
             >
               Features
             </Link>
+            }
           </li>
           <li>
             <Link to="/about" className="hover:underline hover:text-gray-500">
