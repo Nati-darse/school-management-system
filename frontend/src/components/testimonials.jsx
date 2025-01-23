@@ -49,7 +49,7 @@ const Testimonials = () => {
     },
   ];
   return (
-    <div>
+    <div id="testimonials">
       <div className="min-h-screen relative bg-[#f2f4e1] py-16 px-4 sm:px-6 lg:px-8">
         {/* Center Content */}
         <div className="text-center relative z-10">
