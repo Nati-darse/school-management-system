@@ -4,6 +4,7 @@ import Banner from "../components/banner";
 import Testimonials from "../components/testimonials";
 import Footer from "../components/footer";
 import BackToTop from "../components/ui/backToTop";
+import Card from "../components/Card";
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <main className="flex-grow relative z-40">
         <Navbar isStudentPage={false} isHomePage={true} />
         <Banner />
+        <Card/>
         <Testimonials />
       </main>
       <BackToTop />
