@@ -21,13 +21,13 @@ const Navbar = ({ isStudentPage, isHomePage }) => {
         {/* Links */}
         <ul className={`md:flex space-x-6 pr-5 ${isOpen ? "flex" : "hidden"} md:visible`}>
           <li>
-            <Link to="/" className="hover:underline hover:text-gray-500 transition duration-300">
+            <Link to="/" className="hover:underline font-semibold hover:text-gray-500 transition duration-300">
               Home
             </Link>
           </li>
           <li>
             {isStudentPage && (
-              <Link to="/dashboard" className="hover:underline hover:text-gray-500 transition duration-300">
+              <Link to="/dashboard" className="hover:underline font-semibold hover:text-gray-500 transition duration-300">
                 Dashboard
               </Link>
             )}
@@ -36,19 +36,19 @@ const Navbar = ({ isStudentPage, isHomePage }) => {
             {isHomePage && (
               <Link
                 to="/features"
-                className="hover:underline hover:text-gray-500 transition duration-300"
+                className="hover:underline font-semibold hover:text-gray-500 transition duration-300"
               >
                 Features
               </Link>
             )}
           </li>
           <li>
-            <Link to="/about" className="hover:underline hover:text-gray-500 transition duration-300">
+            <Link to="/about" className="hover:underline font-semibold hover:text-gray-500 transition duration-300">
               About
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="hover:underline hover:text-gray-500 transition duration-300">
+            <Link to="/contact" className="hover:underline font-semibold hover:text-gray-500 transition duration-300">
               Contact
             </Link>
           </li>
